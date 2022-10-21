@@ -6,7 +6,7 @@ type ShoppingCart = {
 }
 type CartItem = {
     id: number,
-    name: string,
+    name?: string,
     quantity:number
 }
 

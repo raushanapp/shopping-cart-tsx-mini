@@ -10,25 +10,28 @@ type CartItemsProps = {
 export const CartItem = ({id,quantity}:CartItemsProps) => {
     
     const { removeFromCart } = useShoppingCart();
-    const item =storeItems.find((item) => item.id === id)
-    if(item===null) return null
+    const pro = storeItems?.find((item) => item.id === id)
+    // console.log("pro-",pro)
+    if(pro===undefined) return null
     return (
         <Stack spacing='20px' direction='row' display='flex' alignItems='center'>
-            <Image src={item?.imgUrl} w='125px' h='75px' objectFit='cover' />
+            <Image src={pro?.imgUrl} w='125px' h='75px' objectFit='cover' />
             <Flex direction='column'>
                 <Box>
-                    {item?.name} {" "} 
+                    {pro?.name} {" "} 
                     {quantity > 1 && (
                         <span style={{fontSize:".65rem"}} > X { quantity} </span>
                     )}
                 </Box>
                 <Box fontSize='.75rem'>
-                  {formatCurrency(item?.price)}
+                  {formatCurrency(pro?.price)}
                 </Box>
             </Flex>
-            <Box>{formatCurrency(item?.price * quantity) }</Box>
+            <Box>
+                {formatCurrency(pro?.price * quantity)}
+            </Box>
             <Button variant='outline' colorScheme='red'
-                onClick={()=>removeFromCart(item?.id)}
+                onClick={()=>removeFromCart(pro?.id)}
             >&times;</Button>
         </Stack>
     )

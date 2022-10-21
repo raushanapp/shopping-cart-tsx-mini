@@ -1,5 +1,5 @@
 import { Grid, GridItem, Heading, Image, Text } from "@chakra-ui/react"
-import { StoreItems } from "../Components/Storeitems"
+import { StoreItems } from "../Components/StoreItems"
 import storeItems from "../Data/items.json"
 export const Store = () => {
     
