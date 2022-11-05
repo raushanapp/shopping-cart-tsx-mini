@@ -1,4 +1,5 @@
 import { Container } from "@chakra-ui/react"
+import { useEffect, useState } from "react"
 import { Route, Routes } from "react-router-dom"
 import { Navbar } from "./Components/Navbar"
 import { ShoppingCartProvider } from "./Context/ShoppingCartContext"
@@ -7,6 +8,8 @@ import { Home } from "./Pages/Home"
 import { Store } from "./Pages/Store"
 
 function App() {
+
+ 
 
   return (
     <ShoppingCartProvider>
